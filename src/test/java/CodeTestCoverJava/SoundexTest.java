@@ -15,4 +15,14 @@ public class SoundexTest {
     public void testSingleCharacter() {
          //assertTrue(Soundex.generateSoundex("A")=="A000");
     }
+    @Test
+    public void testNullString(){
+        assertTrue(Soundex.generateSoundex(null)=="");
+    
+	@}
+	Test
+	public void testWordOfSameSound(){
+		assertEquals(Soundex.generateSoundex("rat"),Soundex.generateSoundex("rot"));
+	}
+	
 }
