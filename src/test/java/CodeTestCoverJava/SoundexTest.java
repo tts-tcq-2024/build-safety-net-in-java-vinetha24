@@ -19,8 +19,8 @@ public class SoundexTest {
     public void testNullString(){
         assertTrue(Soundex.generateSoundex(null)=="");
     
-	@}
-	Test
+	}
+	@Test
 	public void testWordOfSameSound(){
 		assertEquals(Soundex.generateSoundex("rat"),Soundex.generateSoundex("rot"));
 	}
