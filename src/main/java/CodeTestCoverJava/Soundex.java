@@ -33,16 +33,9 @@ public class Soundex {
   };
 
 
-  public static void main(String[] args) throws Exception {
-
-    System.out.println(generateSoundex("Robert"));
-    System.out.println(generateSoundex("Rupert"));
-    System.out.println(generateSoundex("ROt"));
-    System.out.println(generateSoundex("Tymczak"));
-
-    System.out.println(generateSoundex("1234"));
-    System.out.println(generateSoundex("A"));
-  }
+public static void main(String[] args) {
+      System.out.println(generateSoundex("Rot"));
+    }
 
   /**
    * @param string
