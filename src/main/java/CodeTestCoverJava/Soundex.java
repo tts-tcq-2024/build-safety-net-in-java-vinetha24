@@ -3,9 +3,6 @@ package CodeTestCoverJava;
 import java.util.HashMap;
 import java.util.Map;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Soundex {
 
   private static final Map<Character, Character> SOUNDEXMAP = new HashMap<Character, Character>() {
@@ -41,7 +38,7 @@ public class Soundex {
   };
 
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
 
     System.out.println(generateSoundex("Rot"));
     
@@ -49,7 +46,7 @@ public class Soundex {
 
   /**
    * @param string
-   * @throws Exception
+   * 
    */
   public static String generateSoundex(String name)  {
       return name == null || name.isEmpty()?"":processSoundexCode(name.toUpperCase());
@@ -69,7 +66,7 @@ public class Soundex {
 
   /**
    * @param name
-   * @throws Exception
+   * 
    */
   private static String processSoundexCode(String name)  {
     StringBuilder soundex = new StringBuilder();
@@ -94,7 +91,7 @@ public class Soundex {
   /**
    * @param charAt 
    * @return
-   * @throws Exception
+   * 
    */
   private static char getSoundexCode(char charAt) {
     if (SOUNDEXMAP.get(charAt) != null) {
