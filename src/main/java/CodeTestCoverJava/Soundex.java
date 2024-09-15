@@ -96,7 +96,7 @@ public class Soundex {
   }
 
   /**
-   * @param charAt
+   * @param charAt 
    * @return
    * @throws Exception
    */
@@ -104,16 +104,9 @@ public class Soundex {
     if (SOUNDEXMAP.get(charAt) != null) {
       return SOUNDEXMAP.get(charAt);
     }
-    else {
+  
       throw new Exception("Invalid Character");
-    }
 
   }
 
-  /**
-   * @param name
-   */
-  private static boolean checkNullandEmptyCondition(String name) {
-    return name == null || name.isEmpty();
-  }
 }
