@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Soundex {
-
   private static final Map<Character, Character> SOUNDEXMAP = new HashMap<Character, Character>() {
     {
       put('B', '1');
