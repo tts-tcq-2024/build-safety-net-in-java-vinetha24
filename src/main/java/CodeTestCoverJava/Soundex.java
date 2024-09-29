@@ -72,11 +72,8 @@ public class Soundex {
     
     char prevCode = getSoundexCode(name.charAt(0));
     for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
-      char code = getSoundexCode(name.charAt(i));
-      if (code != '0' && code != prevCode) {
-        soundex.append(code);
-        prevCode = code;
-      }
+      prevCode = soundexProcess(name, soundex, prevCode, i);
+    } 
      
     }
    
@@ -97,6 +94,22 @@ public class Soundex {
     } 
       return '0';
     }
+
+  /**
+   * @param name
+   * @param soundex
+   * @param prevCode
+   * @param i
+   * @return
+   */
+  private static char soundexProcess(String name, StringBuilder soundex, char prevCode, int i) {
+    char code = getSoundexCode(name.charAt(i));
+    if (code != '0' && code != prevCode) {
+      soundex.append(code);
+      prevCode = code;
+    }
+    return prevCode;
+  }
 
   }
 
