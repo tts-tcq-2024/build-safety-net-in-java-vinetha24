@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Soundex {
   private static final Map<Character, Character> SOUNDEXMAP = new HashMap<Character, Character>() {
+
     {
       put('B', '1');
       put('F', '1');
@@ -36,15 +37,15 @@ public class Soundex {
   };
 
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
-    System.out.println(generateSoundex("Rot"));
+    System.out.println(generateSoundex("H"));
     
   }
 
   /**
    * @param string
-   * 
+   * @throws Exception
    */
   public static String generateSoundex(String name)  {
       return name == null || name.isEmpty()?"":processSoundexCode(name.toUpperCase());
@@ -64,7 +65,7 @@ public class Soundex {
 
   /**
    * @param name
-   * 
+   * @throws Exception
    */
   private static String processSoundexCode(String name)  {
     StringBuilder soundex = new StringBuilder();
@@ -73,27 +74,13 @@ public class Soundex {
     char prevCode = getSoundexCode(name.charAt(0));
     for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
       prevCode = soundexProcess(name, soundex, prevCode, i);
-    } 
      
-    }
-   
+    }  
     padSoundex(soundex);
 
     return soundex.toString();
 
   }
-
-  /**
-   * @param charAt 
-   * @return
-   * 
-   */
-  private static char getSoundexCode(char charAt) {
-    if (SOUNDEXMAP.get(charAt) != null) {
-      return SOUNDEXMAP.get(charAt);
-    } 
-      return '0';
-    }
 
   /**
    * @param name
@@ -110,6 +97,20 @@ public class Soundex {
     }
     return prevCode;
   }
+  
+  
+
+  /**
+   * @param charAt 
+   * @return
+   * @throws Exception
+   */
+  private static char getSoundexCode(char charAt) {
+    if (SOUNDEXMAP.get(charAt) != null) {
+      return SOUNDEXMAP.get(charAt);
+    } 
+      return '0';
+    }
 
   }
 
