@@ -1,0 +1,24 @@
+﻿TestCase Id,Testcase name,Testcase Description,TestData,Expected Results,,,,
+TC001,testEmptyString,Test the empty string to verify empty string handling,"name =""""","""""(EmptyString)",,,,
+TC002,testNullString,Test for null ,name=null,"""""(EmptyString)",,,,
+TC003,testStringofLengthLessThanFour,Test string of length <4 to verify padding scenarios,"name =""D""
+name = ""DA""
+name = ""DAA""","""D000""
+""D000""
+""D000""",,,,
+TC004,testSoundexForVowels,Test vowel characters,"name=""A""","""A000""",,,,
+,,,"name=""E""","""E000""",,,,
+,,,"name =""I""","""I000""",,,,
+,,,"name =""O""","""O000""",,,,
+,,,"name=""U""","""U000""",,,,
+TC005,testSoundexWithNumber,Test string of numbers,"name = ""1234""","""1000""",,,,
+TC006,testSoundexforSpecialCharacters,Test string of special characters,"name = ""!@#$%^&""","""!000""",,,,
+TC007,testSoundexwithMixedCharacters,"Test the string mixed characters(letters,number)","name = ""RO1T""","""R300""",,,,
+TC008,testSoundexwithStringLengthGreaterthanFour,Test string with different length,"name = ""HoneyMan""","""H500""",,,,
+,,,"name =""Ashcraft""","""A261""",,,,
+TC009,testSoundexwithStringofSameSound,Test the string with same sound returns same soundex code,"name = ""Robert"" and name =""Rupert""","Returns ""R163"" and both are equal",,,,
+TC010,testSoundexwithStringofDifferentSound,Test string with different sound should have different soundex code,"name =""Robert"" and name =""Rot""","Returns""R163"" and ""R300"" and are not equal",,,,
+TC011,testStringwithSameAdjacentCode,Test String with the adjacent characters having same code ,"name = ""ABFV""","""A100"" ",,,,
+TC012,"testStringwithH,YandW","TestString with having 'H','Y' and 'W'","name=""H""","""H000""",,,,
+,,,"name =""Y""","""Y000""",,,,
+,,,"name = ""W""","""W000""",,,,
